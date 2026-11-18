@@ -7,6 +7,18 @@
 
 **Status:** Free research demo (v0.4.1). Not a production monitoring or security tool.
 
+[![16 synthetic test cases](https://github.com/snowbirdkind-wq/noruvale-retry-lab/actions/workflows/test.yml/badge.svg)](https://github.com/snowbirdkind-wq/noruvale-retry-lab/actions/workflows/test.yml)
+
+## Try a failure in 30 seconds
+
+1. Open the **[free live demo](https://snowbirdkind-wq.github.io/noruvale-retry-lab/)** (no signup, no API key).
+2. Leave **Write succeeds · response lost** selected with **Blind retry**. The synthetic result shows **two writes for one intended operation**.
+3. Switch to **Stable idempotency key** and run it again. The destination-enforced key in this *model* holds the result to one write.
+4. Choose **Write succeeds · lookup lags** and **Lookup then retry** to explore how an outdated read can lead to another write.
+5. Try **Run all 16 comparisons**, and tell us which real-world failure case this educational model doesn't cover.
+
+> **A key in the client is not enough**: the destination must enforce idempotency atomically. The demo never executes a live API or n8n workflow.
+
 ## What you can try
 
 - Four controlled scenarios: response lost after a write, confirmed non-writing 503 fixture, stale lookup, and two concurrent workers.
