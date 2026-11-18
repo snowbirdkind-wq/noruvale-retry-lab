@@ -1,5 +1,8 @@
 # Noruvale Retry Lab
 
+[**▶ Try the free live demo**](https://snowbirdkind-wq.github.io/noruvale-retry-lab/) · [**Report a synthetic edge case**](https://github.com/snowbirdkind-wq/noruvale-retry-lab/issues/new?template=feedback.md) · [**Source code**](https://github.com/snowbirdkind-wq/noruvale-retry-lab)
+
+
 > A free, browser-based **synthetic experiment** showing why API retries can accidentally duplicate work — and why some prevention techniques depend on the destination system.
 
 **Status:** Free research demo (v0.4.1). Not a production monitoring or security tool.
@@ -13,7 +16,9 @@
 
 ## Demo
 
-After enabling GitHub Pages from the `main` branch root, visit the published site. Alternatively, download this repository and open `index.html` locally.
+**[Open the live demo](https://snowbirdkind-wq.github.io/noruvale-retry-lab/)** — no signup, installation, or real API calls. Choose a failure scenario and retry strategy, then press **Run synthetic test**. Try **Run all 16 comparisons** for the whole matrix.
+
+To run it offline, download this repository and open `index.html` in a modern browser.
 
 ## Important limitations
 
@@ -23,9 +28,13 @@ The `HTTP 503 · nothing committed` scenario explicitly assumes no write happene
 
 No feature here verifies that a remote service actually enforces an idempotency key. A key sent by the client alone does not guarantee protection.
 
-## Feedback
+## Feedback — help us make the model more accurate
 
-Please share *only a minimal, synthetic reproduction* of a retry edge case via GitHub Issues in this repository. Never post real API keys, customer data, private workflow exports, or identifying log excerpts.
+**[Open the feedback form](https://github.com/snowbirdkind-wq/noruvale-retry-lab/issues/new?template=feedback.md)** (GitHub account required). We especially want to hear from automation builders who have hit an ambiguous timeout or replay.
+
+Useful feedback is specific: **Which of the four synthetic scenarios is closest? What did the simulator miss? Which failure would you want to reproduce?**
+
+Please share *only a minimal, synthetic reproduction*. Never post real API keys, customer data, private workflow exports, or identifying log excerpts.
 
 Useful questions: Which workflow tool? What happened? Which side effect was at risk? What did you expect? Would a synthetic test fixture have helped you find it sooner?
 
